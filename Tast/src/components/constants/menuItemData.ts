@@ -8,46 +8,4 @@ interface MenuItem {
     menu: MenuItem[] | null
   }
 // Static Menu Data
-export const menuItemData: MenuItem[] = [
-    // {
-    //     key: uuid(),
-    //     content: "Header",
-    //     on: "hover",
-    //     menu: [
-    //         {
-    //             key: uuid(),
-    //             content: "Sub Header 1",
-    //             on: "hover",
-    //             menu: [
-    //                 {
-    //                     key: uuid(),
-    //                     content: "Nester Sub header",
-    //                     on: "hover",
-    //                     menu: []
-    //                 },
-    //             ],
-    //         }
-    //     ],
-    // },
-    // {
-    //     key: uuid(),
-    //     content: "Tutorial",
-    //     on: "hover",
-    //     menu: [
-    //         {
-    //             key: uuid(),
-    //             content: "Sub Tutorial",
-    //             on: "hover",
-    //             menu: [
-    //                 {
-    //                     key: uuid(),
-    //                     content: "Nester Sub Tutorial 1",
-    //                     on: "hover",
-    //                     menu: []
-    //                 },
-
-    //             ],
-    //         },
-    //     ],
-    // },
-];
+export const menuItemData: MenuItem[] = [];
