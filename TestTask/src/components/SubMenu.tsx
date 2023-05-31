@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ComposeIcon } from '@fluentui/react-northstar'
 import { FC } from 'react'
 
@@ -22,24 +22,19 @@ export const ChildMenu: FC<ChildMenuProps> = ({
   selectedKey,
   onSelectMenuItem,
 }) => {
-  const [menuData, setMenuData] = useState<any>(null)
   return (
     <ul className='menuItem' key={item.key + item.content}>
       <li
         className={
-          menuData !== null && menuData === item.key
+          localStorage.getItem('menuItem') !== null &&
+          localStorage.getItem('menuItem') === item.key
             ? 'addedMenu-link active'
             : 'addedMenu-link'
         }
         onClick={() => {
-          if (menuData !== null && menuData === item.key) {
-            localStorage.removeItem('isChildMenu')
-            setMenuData(null)
-          } else {
-            onSelectMenuItem(item)
-            localStorage.setItem('isChildMenu', JSON.stringify(true))
-            setMenuData(item.key)
-          }
+          onSelectMenuItem(item)
+          localStorage.setItem('isChildMenu', JSON.stringify(true))
+          localStorage.setItem('menuItem', item.key)
         }}
       >
         {icon && <ComposeIcon />}
